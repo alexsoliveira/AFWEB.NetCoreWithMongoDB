@@ -1,7 +1,12 @@
+using EFCoreMongoConnect;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddDbContext<MongoDbContext>(options => {
+    options.UseMongoDB("mongodb://localhost:27017","productsdb");
+});
 // Add services to the container.
-
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();

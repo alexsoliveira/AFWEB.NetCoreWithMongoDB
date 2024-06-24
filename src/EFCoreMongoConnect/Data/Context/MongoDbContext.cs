@@ -10,9 +10,7 @@ public class MongoDbContext : DbContext
 
     public MongoDbContext(DbContextOptions<MongoDbContext> options)
     : base(options)
-    {
-
-    }
+    { }
 
     override protected void OnModelCreating(ModelBuilder modelBuilder)
     {
